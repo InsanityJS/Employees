@@ -6,22 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employees</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body ng-controller="AppCtrl">
 
-    <!--npm install angular-material --save-->
+    <div class="pages">
+        <ng-include src="'pages/login.html'" ng-show="currentView == 'login'"></ng-include>
+        <ng-include src="'pages/registration.html'" ng-show="currentView == 'registration'"></ng-include>
+        <ng-include src="'pages/employees.html'" ng-show="currentView == 'employees'"></ng-include>
+        <ng-include src="'pages/add.html'" ng-show="currentView == 'add'"></ng-include>
+    </div>
 
-    <md-toolbar>
-        <h1>Test material js</h1>
-    </md-toolbar>
 
-    <md-button class="md-primary md-raised" ng-click="showConfirm($event)">
-        Confirm dialog
-    </md-button>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>

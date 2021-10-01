@@ -1,0 +1,29 @@
+<div class="container">
+
+    <h1 class="title">Registration form</h1>
+
+
+    <form name='registrationForm' class="form__registration"> 
+
+        <md-input-container class="md-icon-float md-block">
+            <label>Username:</label>
+            <md-icon md-svg-src="img/ic_person_24px.svg" class="name"></md-icon>
+            <input ng-model="user.name" type="text" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <label>Password:</label>
+            <md-icon md-svg-src="img/ic_pass_24px.svg" class="password"></md-icon>
+            <input ng-model="user.password" type="password" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <label>Confitm password:</label>
+            <md-icon md-svg-src="img/ic_pass_24px.svg" class="password"></md-icon>
+            <input ng-model="user.password" type="password" required>
+        </md-input-container>
+        
+         <md-button class="md-raised md-primary" type="submit" name="registration">Sign up</md-button>
+        
+    </form>
+
+    
+

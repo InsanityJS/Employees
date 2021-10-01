@@ -1,7 +1,27 @@
-angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($scope, $mdDialog) {
+angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($scope, $mdDialog, ) {
     $scope.status = "  ";
     $scope.customFullscreen = false;
+    $scope.currentView = "employees";
 
+    //! Выбор департамента
+    $scope.selectedDepartment = { id: 1, name: 'All' };
+    $scope.departments = [
+        { id: 1, name: 'All' },
+        { id: 2, name: 'Designer' },
+        { id: 3, name: 'Astrophysicist' },
+        { id: 4, name: 'Biologist' },
+        { id: 5, name: 'Electronic engineer' }
+    ];
+    
+       
+
+
+    // меркури - дизайнер
+    // брайан мей - астрофизик
+    // Roger Meddows Taylor - biologist
+    // John Deacon - Electronic engineer
+
+    //! Кнопка
     $scope.showConfirm = function (ev) {
         var confirm = $mdDialog
             .confirm()
