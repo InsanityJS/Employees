@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-body, html {
-   min-height: 100%;
-   width: 100%;
-   
+body,
+html {
+    min-height: 100%;
+    width: 100%;
 }
 .container {
     position: relative;
@@ -13,13 +13,11 @@ body, html {
     width: 768px;
     margin: 0 auto;
     background-color: #dff2e4;
-
 }
 form {
     width: 300px;
     margin: 0 auto;
     margin-top: 30px;
-   
 }
 .form__field {
     margin-bottom: 25px;
@@ -45,7 +43,8 @@ form {
     font-weight: 700;
     text-align: center;
     font-size: 35px;
-}.md-raised {
+}
+.md-raised {
     border-radius: 10px;
     height: 40px;
     width: 100%;
@@ -55,8 +54,6 @@ form {
     width: 100%;
     display: flex;
     justify-content: space-between;
-
-
 }
 .form__buttons > .md-raised {
     width: 45%;
@@ -75,4 +72,25 @@ form {
 }
 .md-errors-spacer {
     display: none;
+}
+table {
+    width: 100%;
+}
+th {
+    border: 1px solid black;
+}
+tr {
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+}
+.form__select {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    outline: none;
+}
+.form__select-label {
+    color: rgba(0, 0, 0, 0.54);
 }

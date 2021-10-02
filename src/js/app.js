@@ -1,27 +1,44 @@
-angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($scope, $mdDialog, ) {
+angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($scope, $mdDialog) {
     $scope.status = "  ";
     $scope.customFullscreen = false;
     $scope.currentView = "employees";
 
-    //! Выбор департамента
-    $scope.selectedDepartment = { id: 1, name: 'All' };
-    $scope.departments = [
-        { id: 1, name: 'All' },
-        { id: 2, name: 'Designer' },
-        { id: 3, name: 'Astrophysicist' },
-        { id: 4, name: 'Biologist' },
-        { id: 5, name: 'Electronic engineer' }
+    $scope.employees = [
+        {
+            id: 0,
+            name: "Freddie Mercury",
+            department: "Designer",
+            textarea: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+        },
+        {
+            id: 1,
+            name: "Roger Meddows Taylor",
+            department: "Biologist",
+            textarea: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+        },
+        {
+            id: 2,
+            name: "John Deacon",
+            department: "Electronic engineer",
+            textarea: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+        },
+        {
+            id: 3,
+            name: "Brian May",
+            department: "Astrophysicist",
+            textarea: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+        },
+        {
+            id: 4,
+            name: "John Peel",
+            department: "Journalist",
+            textarea: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+        },
     ];
-    
-       
-  
 
-    // меркури - дизайнер
-    // брайан мей - астрофизик
-    // Roger Meddows Taylor - biologist
-    // John Deacon - Electronic engineer
+    $scope.select = ["", "Designer", "Astrophysicist", "Biologist", "Electronic engineer", "Journalist"];
+    $scope.selected = $scope.select[0];
 
-    //! Кнопка
     $scope.showConfirm = function (ev) {
         var confirm = $mdDialog
             .confirm()

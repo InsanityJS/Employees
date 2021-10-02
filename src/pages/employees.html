@@ -4,17 +4,45 @@
         <md-input-container class="md-icon-float md-block">
             <label>Search for employee</label>
             <md-icon md-svg-src="img/ic_search_24px.svg" class="name"></md-icon>
-            <input ng-model="search.employee" type="text">
+            <input ng-model="searchEmployee" type="text">
         </md-input-container>
-        <md-input-container class="md-icon-float md-block">
-            <label>Search for employee</label>
+        <div>
+            <label class="form__select-label">Select department</label>
             <md-icon md-svg-src="img/ic_select_24px.svg" class="select"></md-icon>
-            <md-select ng-model="selectedDepartment" ng-model-options="{trackBy: '$value.id'}">
-                <md-option ng-value="department" ng-repeat="department in departments">{{ department.name }}</md-option>
-            </md-select>
-        </md-input-container>
+            <select class="form__select" ng-model="searchDepartment"
+                ng-options="department for department in select"></select>
+        </div>
         <md-button class="md-raised md-primary form__add" type="submit" name="add">Add</md-button>
 
     </form>
+
+    <table class="employees__table">
+        <thead class="employees__title">
+            <tr>
+                <th>#</th>
+                <th>Employee</th>
+                <th>Department</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees | filter:searchEmployee | filter:searchDepartment">
+                <td>{{$index + 1}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.department}}</td>
+
+                <td>
+                    <button ng-click=" editOrCreate(employee)">
+                        Edit
+                    </button>
+                </td>
+                <td>
+                    <button ng-click="delete(employee)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </div>
