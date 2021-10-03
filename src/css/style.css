@@ -94,3 +94,30 @@ td {
 .form__select-label {
     color: rgba(0, 0, 0, 0.54);
 }
+.form__card {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.form__select-block {
+    display: flex;
+    flex-direction: column;
+}
+.form__card-select {
+    width: 100%;
+}
+.form__card-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.form__card-buttons .md-primary {
+    width: 20%;
+}
+.form__card-label {
+    margin-bottom: 5px;
+}
+#cancelButton {
+    background-color: #fff;
+    color: black;
+}

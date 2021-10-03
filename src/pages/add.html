@@ -1,0 +1,23 @@
+<div class="container">
+    <form class="form__card">
+        <div class="form__select-block">
+            <label class="form__select-label form__card-label">Department:</label>
+            <!--<md-icon md-svg-src="img/ic_select_24px.svg" class="select"></md-icon>-->
+            <select class="form__card-select form__select" ng-model="searchDepartment"
+                ng-options="department for department in select"></select>
+        </div>
+        <md-input-container class="md-icon-float md-block">
+            <label>Full name:</label>
+            <!--<md-icon md-svg-src="img/ic_person_24px.svg" class="name"></md-icon>-->
+            <input ng-model="user.name" type="text" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <label>Notes:</label>
+            <textarea name="" id="" rows="5"></textarea>
+        </md-input-container>
+        <div class="form__card-buttons">
+            <md-button class="md-raised md-primary" type="submit" name="Save">Save</md-button>
+            <md-button id="cancelButton" class="md-raised md-primary " type="submit" name="Cancel">Cancel</md-button>
+        </div>
+    </form>
+</div>

@@ -1,7 +1,7 @@
 angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($scope, $mdDialog) {
     $scope.status = "  ";
     $scope.customFullscreen = false;
-    $scope.currentView = "employees";
+    $scope.currentView = "add";
 
     $scope.employees = [
         {
