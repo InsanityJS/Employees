@@ -1,4 +1,13 @@
 <div class="container">
+
+
+    <h1 class="title">
+        <span ng-show="!data.id">Add</span>
+
+        <span ng-show="data.id">Edit</span> Employee
+    </h1>
+
+
     <form class="form__card">
         <div class="form__select-block">
             <label class="form__select-label form__card-label">Department:</label>
@@ -15,7 +24,8 @@
         </md-input-container>
         <div class="form__card-buttons">
             <md-button class="md-raised md-primary" type="submit" name="Save" ng-click="pushData(data)">Save</md-button>
-            <md-button id="cancelButton" class="md-raised md-primary " type="submit" name="Cancel" ng-click="cancel()" >Cancel</md-button>
+            <md-button id="cancelButton" class="md-raised md-primary " type="submit" name="Cancel" ng-click="cancel()">
+                Cancel</md-button>
         </div>
     </form>
 </div>

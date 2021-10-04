@@ -1,4 +1,5 @@
 <div class="container">
+    <h1 class="title">Database of employees</h1>
     <form name="search" class="form__search">
 
         <md-input-container class="md-icon-float md-block">
@@ -12,7 +13,8 @@
             <select class="form__select" ng-model="searchDepartment" ng-options="department for department in select">
             </select>
         </div>
-        <md-button class="md-raised md-primary form__add" type="submit" name="add" ng-click="addEmployee()">Add</md-button>
+        <md-button class="md-raised md-primary form__add" type="submit" name="add" ng-click="addEmployee()">Add
+        </md-button>
 
     </form>
 
@@ -27,15 +29,17 @@
         </thead>
         <tbody>
             <tr ng-repeat="employee in employees | filter:searchEmployee | filter:searchDepartment">
-                <td >{{$index + 1}} </td>
+                <td>{{$index + 1}} </td>
                 <td ng-click="view(employee)">{{employee.username}}</td>
-                <td >{{employee.department}}</td>
+                <td>{{employee.department}}</td>
 
                 <td>
-                    <md-button  id="employee-btn" class="md-raised md-primary  employees__table-button" ng-click="edit(employee)">Edit</md-button>
+                    <md-button id="employee-btn" class="md-raised md-primary  employees__table-button"
+                        ng-click="edit(employee)">Edit</md-button>
                 </td>
                 <td>
-                    <md-button id="employee-btn" class="md-raised md-primary employees__table-button" ng-click="showConfirm(employee)">Delete</md-button>
+                    <md-button id="employee-btn" class="md-raised md-primary employees__table-button"
+                        ng-click="showConfirm(employee)">Delete</md-button>
                 </td>
             </tr>
         </tbody>
