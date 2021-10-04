@@ -12,7 +12,7 @@
             <select class="form__select" ng-model="searchDepartment" ng-options="department for department in select">
             </select>
         </div>
-        <md-button class="md-raised md-primary form__add" type="submit" name="add">Add</md-button>
+        <md-button class="md-raised md-primary form__add" type="submit" name="add" ng-click="addEmployee()">Add</md-button>
 
     </form>
 
@@ -27,19 +27,15 @@
         </thead>
         <tbody>
             <tr ng-repeat="employee in employees | filter:searchEmployee | filter:searchDepartment">
-                <td>{{$index + 1}}</td>
-                <td>{{employee.name}}</td>
-                <td>{{employee.department}}</td>
+                <td >{{$index + 1}} </td>
+                <td ng-click="view(employee)">{{employee.username}}</td>
+                <td >{{employee.department}}</td>
 
                 <td>
-                    <button ng-click=" editOrCreate(employee)">
-                        Edit
-                    </button>
+                    <md-button  id="employee-btn" class="md-raised md-primary  employees__table-button" ng-click="edit(employee)">Edit</md-button>
                 </td>
                 <td>
-                    <button ng-click="delete(employee)">
-                        Delete
-                    </button>
+                    <md-button id="employee-btn" class="md-raised md-primary employees__table-button" ng-click="showConfirm(employee)">Delete</md-button>
                 </td>
             </tr>
         </tbody>

@@ -45,7 +45,7 @@ form {
     font-size: 35px;
 }
 .md-raised {
-    border-radius: 10px;
+    border-radius: 15px;
     height: 40px;
     width: 100%;
     margin: 0;
@@ -74,12 +74,10 @@ form {
     display: none;
 }
 table {
+    border-collapse: collapse;
     width: 100%;
 }
 th {
-    border: 1px solid black;
-}
-tr {
     border: 1px solid black;
 }
 td {
@@ -120,4 +118,43 @@ td {
 #cancelButton {
     background-color: #fff;
     color: black;
+}
+#employee-btn {
+    background-color: transparent;
+    border-radius: 0%;
+    color: black;
+}
+/* .employees__table_tac {
+    text-align: center;
+} */
+td:nth-child(1), td:nth-child(3) {
+    text-align: center;
+}
+td:nth-child(1) {
+    width: 30px;
+}
+td:nth-child(2) {
+    padding-left: 10px;
+    cursor: pointer;
+}
+th {
+    line-height: 41px;
+}
+#back {
+    width: 150px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+}
+.view__inputs {
+    margin: 15px 0 ;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    cursor: default;
+    font-size: 20px;
+    padding-left: 0;
+    width: 100%;
+
 }
