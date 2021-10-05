@@ -56,7 +56,6 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
     $scope.edit = function (item) {
         $scope.data = item ? angular.copy(item) : {};
         $scope.page = "add";
-        console.log(item);
     };
 
     $scope.view = function (item) {

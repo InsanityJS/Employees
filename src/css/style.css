@@ -122,8 +122,15 @@ td {
 #employee-btn {
     background-color: transparent;
     border-radius: 0%;
-    color: black;
+    color: green;
 }
+.employees__table-button_red{
+    color: red !important;
+}
+.select {
+    color: rgba(0,0,0,0.87);
+}
+
 /* .employees__table_tac {
     text-align: center;
 } */
