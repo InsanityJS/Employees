@@ -18,11 +18,11 @@
 <body ng-controller="AppCtrl">
 
     <div class="pages">
-        <ng-include src="'pages/login.html'" ng-show="currentView == 'login'"></ng-include>
-        <ng-include src="'pages/registration.html'" ng-show="currentView == 'registration'"></ng-include>
-        <ng-include src="'pages/employees.html'" ng-show="currentView == 'employees'"></ng-include>
-        <ng-include src="'pages/add.html'" ng-show="currentView == 'add'"></ng-include>
-        <ng-include src="'pages/view.html'" ng-show="currentView == 'view'"></ng-include>
+        <ng-include src="'pages/login.html'" ng-show="page == 'login'"></ng-include>
+        <ng-include src="'pages/registration.html'" ng-show="page== 'registration'"></ng-include>
+        <ng-include src="'pages/employees.html'" ng-show="page == 'employees'"></ng-include>
+        <ng-include src="'pages/add.html'" ng-show="page == 'add'"></ng-include>
+        <ng-include src="'pages/view.html'" ng-show="page == 'view'"></ng-include>
     </div>
 
 
