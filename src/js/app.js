@@ -1,12 +1,12 @@
 angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($scope, $mdDialog) {
     $scope.status = "  ";
     $scope.customFullscreen = false;
-    $scope.page = "employees";
+    $scope.page = "login";
     $scope.saved = localStorage.getItem('employees');
     $scope.employees = (localStorage.getItem('employees')!==null) ? JSON.parse($scope.saved) : [ 
         {
             $$hashKey: "001",
-            id: 0,
+            id: 1,
             username: "Freddie Mercury",
             department: "Designer",                                                                                                           
             textarea:
@@ -14,7 +14,7 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
         },
         {
             $$hashKey: "002",
-            id: 1,
+            id: 2,
             username: "Roger Meddows Taylor",
             department: "Biologist",
             textarea:
@@ -22,7 +22,7 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
         },
         {
             $$hashKey: "003",
-            id: 2,
+            id: 3,
             username: "John Deacon",
             department: "Electronic engineer",
             textarea:
@@ -30,7 +30,7 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
         },
         {
             $$hashKey: "004",
-            id: 3,
+            id: 4,
             username: "Brian May",
             department: "Astrophysicist",
             textarea:
@@ -38,14 +38,14 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
         },
         {
             $$hashKey: "005",
-            id: 4,
+            id: 5,
             username: "John Peel",
             department: "Journalist",
             textarea:
                 "John Robert Parker Ravenscroft OBE (30 August 1939 – 25 October 2004), known professionally as John Peel, was an English disc jockey, radio presenter, record producer and journalist. He was the longest-serving of the original BBC Radio 1 DJs, broadcasting regularly from 1967 until his death in 2004.",
         }, ];
     localStorage.setItem('employees', JSON.stringify($scope.employees));
-
+   
     $scope.select = ["", "Designer", "Astrophysicist", "Biologist", "Electronic engineer", "Journalist"];
     $scope.selected = $scope.select[0];
 
@@ -68,8 +68,6 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
         $scope.page = "employees";
     };
 
-
-    //! Save data
     $scope.pushData = function (item) {
         if (angular.isDefined(item.id)) {
             for (var i = 0; i <= $scope.employees.length; i++) {
@@ -90,7 +88,11 @@ angular.module("employeesApp", ["ngMaterial"]).controller("AppCtrl", function ($
         }
     };
 
-
+    $scope.signIn = function () {
+            if($scope.username == undefined && $scope.userpassword == undefined) {
+                $scope.page = "employees";
+            } 
+    }
     $scope.showConfirm = function (item) {
         var confirm = $mdDialog
             .confirm()
